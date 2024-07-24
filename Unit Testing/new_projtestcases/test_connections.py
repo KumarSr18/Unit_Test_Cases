@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from connections import get_data, format_data, load  # Replace 'your_module' with the actual name of your Python file
+from connections import get_data, format_data, load 
 import uuid
 
 class TestAPIFunctions(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestAPIFunctions(unittest.TestCase):
         mock_response.json.return_value = {
             "results": [{
                 "name": {"first": "John", "last": "Doe"},
-                # Add other fields as necessary
+                
             }]
         }
         mock_get.return_value = mock_response
@@ -23,8 +23,7 @@ class TestAPIFunctions(unittest.TestCase):
         # Assertions
         self.assertEqual(data['name']['first'], "John")
         self.assertEqual(data['name']['last'], "Doe")
-        # Add other assertions as necessary
-
+        
     def test_format_data(self):
         # Sample response that mimics the API response
         sample_response = {
